@@ -16,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^3.3.3",
     "gatsby-plugin-sharp": "^2.6.10",
     "gatsby-source-filesystem": "^2.3.10",
+    "gatsby-transformer-remark": "^2.8.14",
     "gatsby-transformer-sharp": "^2.5.4",
     "netlify-cms-app": "^2.12.14",
     "prop-types": "^15.7.2",
@@ -24,6 +25,7 @@
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -32,7 +34,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

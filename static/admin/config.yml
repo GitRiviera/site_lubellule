@@ -1,21 +1,19 @@
 backend:
   name: github
-  repos: GitRiviera/site_lubellule
+  repo: GitRiviera/site_lubellule
 
-media_folder: static/img
-public_folder: /img
+# local_backend: true
 
+
+media_folder: static/assets
+public_folder: /assets
+locale: 'en'
+publish_mode: editorial_workflow
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "gallery"
+    label: "Gallery"
+    folder: "assets/galleries"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    editor:
-     preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Folder Path", name: "folder_path", widget: "string" }

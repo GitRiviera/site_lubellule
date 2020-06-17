@@ -6,7 +6,7 @@ import GridListTile from  '@material-ui/core/GridListTile'
 
 // conditionnal col number, alt, title
 export function displayImage(edge){
-    console.log(edge)
+    // console.log(edge)
   return(
       <GridListTile key={edge.node.childImageSharp.fluid.src} cols={1}>
         <img src={edge.node.childImageSharp.fluid.src} alt='toto' />

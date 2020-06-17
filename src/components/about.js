@@ -29,9 +29,9 @@ export default function About(){
             }
         }
     `
-    console.log("GRAPHQL")
-
-    console.log(query.file)
+    // console.log("GRAPHQL")
+    //
+    // console.log(query.file)
 
     const classes = useStyles();
 

@@ -16,25 +16,63 @@ import About from '../components/about'
 
 
 import 'fontsource-roboto';
-const IndexPage = () => (
-  <>
-    <MatUi_Navbar/>
-    <MatUiHeader/>
-    <Container
-    >
-      <h1 style={{
-        'textDecoration':'underline', 'textAlign':'center'
-      }}
-        >
-        projets
-        </h1>
-        <GalleryTabs/>
-        <Footer/>
-    </Container>
-  </>
+
+function displayName(node){
+    console.log(node.node.name)
+}
+
+const literalTest = () => (
+    'query_1'
 )
 
-export default IndexPage
+export default function IndexPage({data}){
+    console.log("QUERY INDEX PAGE")
+    // console.log(data)
+    // console.log(data.query_1)
+    // console.log(data.query_1.edges)
+
+    data.query_1.edges.map(displayName)
+    return(
+
+        <>
+          <MatUi_Navbar/>
+          <MatUiHeader/>
+          <Container
+          >
+            <h1 style={{
+              'textDecoration':'underline', 'textAlign':'center'
+            }}
+              >
+              projets
+              </h1>
+              <GalleryTabs/>
+              <Footer/>
+          </Container>
+        </>
+    )
+}
+
+
+
+
+export const query = graphql`
+query{
+	query_1: allFile(
+    filter: {sourceInstanceName: {eq: "gallery_1"}}
+  )
+  {
+    edges{
+      node{
+        name
+        dir
+      }
+    }
+  }
+
+}
+`
+
+
 //
 // <Layout>
 //   <SEO title="Home" />
